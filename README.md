@@ -1,0 +1,2 @@
+# StdDetailsProj
+Student details website
