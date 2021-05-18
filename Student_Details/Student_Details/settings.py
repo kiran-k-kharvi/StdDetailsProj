@@ -16,9 +16,9 @@ from django.urls.conf import path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR)
 Temp_DIR = Path.joinpath(BASE_DIR,"templates")
 Static_DIR = Path.joinpath(BASE_DIR,"static")
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'student_Activities'
+    'student_Activities',
+    'PIL'
 ]
 
 MIDDLEWARE = [
@@ -125,5 +126,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    Static_DIR
+    Static_DIR,
 ]
+
+STATIC_ROOT = Path.joinpath(BASE_DIR,"mysmtatic")
+
+
+
+MEDIA_URL = "/mymedia/"
+MEDIA_ROOT =  Path.joinpath(BASE_DIR,"media")
+
