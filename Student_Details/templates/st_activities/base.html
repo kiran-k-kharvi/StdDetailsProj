@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,15 +8,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'st_activities/css/base.css' %}" >
+    <link rel="shortcut icon" href="{% static 'st_activities/img/Titlelogo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'st_activities/bootstrap/bootstrap.min.css' %}">
+    
+    
+    
     {% block title %}
     <title>Base</title>
     {% endblock %}
+    <nav class="navbar navbar-expand navbar-dark nv ">
+        <a class="navbar-brand mb-0 h1 text-wa" href="#">Simba</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            {% block active %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% endblock %}
+          </ul>
+        </div>
+    </nav>
 </head>
 <body>
-   <h1>sdfgh</h1>
+   
 {% block my %}
-    <h1>hi bvc</h1>
+    <h1>Base Body</h1>
 {% endblock %}
+
+
+
+
+<script src="{% static 'st_activities/js/jquery-3.6.0.min.js' %}"></script>
+
+<script src="{% static 'st_activities/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'st_activities/js/myjs.js' %}"></script>
     
 </body>
 </html>

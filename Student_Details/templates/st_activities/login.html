@@ -1,0 +1,31 @@
+{% extends 'st_activities/base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block title %}
+<title>
+    Login
+</title>
+{% endblock %}
+
+{% block active %}
+            <li class="nav-item ">
+              <a class="nav-link " href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+{% endblock %}
+
+
+
+{% block my %}
+
+<div class="container">
+    Login Page
+
+</div>
+
+{% endblock %}
+

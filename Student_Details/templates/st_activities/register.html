@@ -1,0 +1,92 @@
+{% extends 'st_activities/base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block title %}
+<title>
+    Register
+</title>
+{% endblock %}
+
+{% block active %}
+            <li class="nav-item active">
+              <a class="nav-link " href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+{% endblock %}
+
+{% block my %}
+                <div class="container">
+                    <div class="jumbotron " style="background-color: rebeccapurple;"> 
+                        <h2 id="h2" class="col-lg-12">Student Registration Form</h2>
+
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row" >
+                                    <div class="col-lg-2"></div>
+                                     <div class="col-lg-4 font-weight-bold ">
+                                            {{std.First_Name|as_crispy_field}}
+
+                                     </div>
+                                     <div class="col-lg-4 font-weight-bold ">
+                                            {{std.Last_Name|as_crispy_field}}
+
+                                    </div>
+                                            <div class="col-lg-2"></div>
+                                            <div class="col-lg-2"></div>
+                                 
+                                    <div class="col-lg-4 font-weight-bold ">
+                                                {{std.Email|as_crispy_field}}
+                                                <span id="en_spn">{{em_error}}</span>
+                                    </div>
+                                    <div class="col-lg-4 font-weight-bold">
+                                                {{std.Password|as_crispy_field}}
+                                    </div>
+                                             <div class="col-lg-2"></div>
+                                             <div class="col-lg-2"></div>
+                                    <div class="col-lg-4 font-weight-bold ">
+                                                {{pf.gitLink|as_crispy_field}}
+                                    </div>
+                                            
+                                     <div class="col-lg-4 font-weight-bold ">
+                                            {{pf.profile_pic|as_crispy_field}}
+                                     </div>
+                                 
+                                     <div class="col-lg-2"></div>
+                                     <div class="col-lg-5"></div>
+                                    
+                                 
+                                    <div class="col-lg-4">
+                                    <button type="submit" class="btn btn-primary" id="subBtn" >Submit Record</button>
+                                     </div>
+                                     {% if msg%}
+                                     <h5 id="msg" class="col-lg-12" >{{msg}}</h5>
+                                     {% endif %}
+                                </div>
+                            
+                            </form>
+                    </div>
+                </div>
+            
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
