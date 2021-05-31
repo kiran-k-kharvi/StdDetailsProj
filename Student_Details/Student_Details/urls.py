@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from student_Activities import views
 urlpatterns = [
-    path('',views.register,name='register'),
+    path('',views.landing,name='landing'),
     path('register/',views.register,name='register'),
-    path('login/',views.op,name='login'),
+    path('login/',views.login,name='login'),
     path('admin/', admin.site.urls),
 ]

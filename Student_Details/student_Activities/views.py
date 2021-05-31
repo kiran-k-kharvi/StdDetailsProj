@@ -4,6 +4,7 @@ from .models import student_Info
 from django.contrib.auth.hashers import make_password,check_password
 # Create your views here.
 
+
 def register(request):
     std_form = student_details_form()
     pofo_form = portfolio_form()
@@ -31,5 +32,33 @@ def register(request):
     else:
         return render(request,'st_activities/register.html',{"std":std_form,"pf":pofo_form})
 
-def op(request):
-    return render(request,'st_activities/login.html') 
+
+def login(request):
+    if request.method == "POST":
+        msg = {"msg":"Incorrect email or password"}
+        email_verify =request.POST['email']
+        pass_verify =request.POST['password']
+
+        try:
+            st_obj = student_Info.objects.get(Email=email_verify)   
+        except:
+            print("No user")
+            return render(request,'st_activities/login.html',context=msg)
+        else:
+            if st_obj.Email == email_verify and check_password(pass_verify,st_obj.Password):
+                print("logged in")
+                print(st_obj.First_Name)
+                print(st_obj.Last_Name)
+                return render(request,'st_activities/login.html')
+            else:
+                print("Login Failed")
+                return render(request,'st_activities/login.html',context=msg)
+                
+        
+    return render(request,'st_activities/login.html')
+    
+     
+def landing(request):
+    
+    
+    return render(request,'st_activities/landing.html') 

@@ -1,0 +1,18 @@
+.carousel-inner .carousel-item, .carousel-item img
+{
+    max-height: 57vh;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon 
+{
+    width: 22%;
+    height: 22%;
+}
+
+
+
+#std_carousel
+{
+    margin-top: 56px;
+
+}

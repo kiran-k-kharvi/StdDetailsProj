@@ -1,6 +1,12 @@
-{% extends 'st_activities/base.html' %}
+{% extends "st_activities/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 
+
+{% block headLink %}
+<link rel="stylesheet" href="{% static 'st_activities/css/login.css' %}" >
+    
+{% endblock %}
 
 
 {% block title %}
@@ -20,12 +26,43 @@
 
 
 
-{% block my %}
 
-<div class="container">
-    Login Page
 
+{% block body %}
+  <body >
+    
+<div class="container " >
+<div class="jumbotron">
+<form method="POST">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="id_email">Email address</label>
+    <input type="email" name="email" class="form-control" id="id_email" aria-describedby="emailHelp" placeholder="Enter email" required>
+  </div>
+  <div class="form-group">
+    <label for="id_password">Password</label>
+    <input type="password" name="password" class="form-control" id="id_password" placeholder="Password" required>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 lgBtn">
+  <button type="submit" id="subBtn1" class="btn btn-success">Login</button>
+  </div>
+    <div class="col-lg-12 lgBtn">
+  <button type="button" id="subBtn2" class="btn btn-success signup">Sign up</button>
+  </div>
 </div>
+{% if msg %}
+  <h6 id="msg">{{msg}}</h6>
+{% endif %}
+</form>
+</div>
+</div>
+</body>
 
 {% endblock %}
 
+
+{% block script %}
+  <script src="{% static 'st_activities/js/login.js' %}"></script>
+{% endblock %}

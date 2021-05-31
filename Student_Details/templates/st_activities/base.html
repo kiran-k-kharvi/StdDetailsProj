@@ -10,34 +10,37 @@
     <link rel="stylesheet" href="{% static 'st_activities/css/base.css' %}" >
     <link rel="shortcut icon" href="{% static 'st_activities/img/Titlelogo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'st_activities/bootstrap/bootstrap.min.css' %}">
+  {% block headLink %}
+    
+  {% endblock %}
     
     
     
-    {% block title %}
+{% block title %}
     <title>Base</title>
-    {% endblock %}
-    <nav class="navbar navbar-expand navbar-dark nv ">
-        <a class="navbar-brand mb-0 h1 text-wa" href="#">Simba</a>
+{% endblock %}
+    <nav class="navbar navbar-expand-lg navbar-dark nv fixed-top">
+        <a class="navbar-brand mb-0 h1 text-wa" style="    padding-top: 3px;" href="{% url 'landing' %}">Simba</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            {% block active %}
+{% block active %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'register' %}">Register</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
-            {% endblock %}
+{% endblock %}
           </ul>
         </div>
     </nav>
 </head>
-<body>
+
    
-{% block my %}
+{% block body %}
     <h1>Base Body</h1>
 {% endblock %}
 
@@ -45,9 +48,12 @@
 
 
 <script src="{% static 'st_activities/js/jquery-3.6.0.min.js' %}"></script>
-
 <script src="{% static 'st_activities/bootstrap/bootstrap.min.js' %}"></script>
-<script src="{% static 'st_activities/js/myjs.js' %}"></script>
-    
+
+{% block script %}
+  
+{% endblock %}
+
+
 </body>
 </html>

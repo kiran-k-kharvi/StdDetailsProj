@@ -1,0 +1,61 @@
+body
+{
+    background-image:url(../img/bg_login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+
+}
+html
+{
+    height: 100%;
+}
+
+
+.form-group
+{
+    padding: 0 17%;
+
+}
+#subBtn1,#subBtn2
+{
+
+    width: 45%;
+    padding: 0px 0px;
+    margin: 4px;
+}
+
+.row .col-lg-6
+{
+    text-align: center;
+}
+
+.container
+{
+    
+    margin-top: 70px;
+}
+
+.jumbotron
+{
+    margin: 3px 31%;
+    padding: 37px 0;
+    opacity: 94%;
+    background-color: darkslateblue;
+    color: floralwhite;
+
+}
+
+.lgBtn
+{
+    text-align: center;
+}
+
+#msg
+{
+    text-align: center;
+    font-size: 80%;
+    color: red;
+    font-weight: bolder;
+}
